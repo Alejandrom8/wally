@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Game</title>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" type="text/css" href="/frwks/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Chathura|Hind+Vadodara|Major+Mono+Display&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/css/game.css">
+
+    <!-- SCRIPTS -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/entities/PlayerClient.js"></script>
+    <script src="/js/RoomClient.js"></script>
+    
+    <script>
+        const generalURL = 'http://192.168.1.77:3000';
+        window.socket = io.connect('/');
+        window.room = new RoomClient();
+    </script>
+
+    <!-- GAME SECTION-->
+        <!-- Tools -->
+        <script src='/frwks/phaser/dist/phaser.min.js'></script>
+
+        <!-- Models -->
+            <!-- Entities -->
+            <script src='/game/models/entities/entities.js'></script>
+
+            <script src='/game/models/bullets/Bullet.js'></script>
+            <script src='/game/models/bullets/Bullets.js'></script>
+            <script src='/game/models/bullets/EnemyBullets.js'></script>
+            <!-- Enemies -->
+            <script src='/game/models/enemies/Enemy.js'></script>
+            <script src='/game/models/enemies/Enemies.js'></script>
+            <!-- Players -->
+            <script src='/game/models/entities/PlayerSprite.js'></script>
+            <script src='/game/models/entities/PlayerContainer.js'></script>
+            <script src='/game/models/entities/Player.js'></script>
+            
+        <script src='/game/models/MultiplayerSession.js'></script>
+        
+        <!-- Scenes -->
+        <script src='/game/scenes/Game.js'></script>
+        <script src='/game/index.js'></script>
+    <!-- End's Game section-->
+</head>
+<body>
+    <!-- 1. Se registra el cuarto -->
+    <section id="room_window" class="mainBlock block">
+        <div class="secondBlock block">
+            <div class="centeredContent">
+                <div class="internalForm">
+                    <h1 class="title">WALLY</h1>
+                    <br><br><br>
+                    <button id="create_room" class="btn btn-large btn-primary btn-block bigbtn">Crear sala</button>
+                    <a href="/control" id="join_room" class="btn btn-large btn-block bigbtn">Ingresar a una sala</a>
+                </div>
+            </div>
+        </div>
+        <!-- 1.1. se crea un cuarto -->
+        <div id="create_room_section" class="secondBlock block">
+            <div class="centeredContent">
+                <div class="internalForm visualized">
+                    <h1 class="title">WALLY</h1>
+                    <br><br>
+                    <div id="debug_area"></div>
+                    <form id="create_room_form" method="POST" action="/game/create_room">
+                        <div class="form-group">
+                            <label for="roomName">Nombre de la sala</label>
+                            <input type="text" 
+                                   id="roomName"
+                                   name="roomName"
+                                   class="form-control"
+                                   placeholder="Ingrese un nombre para la sala"
+                                   max-length="50"
+                                   required
+                                   autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="playerLimit">Número de jugadores</label>
+                            <select id="playerLimit" name="playerLimit" class="form-control" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="create" class="btn btn-primary btn-large btn-block">Crear cuarto</button>
+                    </form>
+                    <button class="mt-1 btn btn-secondary btn-large btn-block return">regresar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 2. Se registran los jugadores -->
+    <section id="control_window" class="mainBlock block">
+        <div id="players_window">
+            <div id="playersSection" class="content row"></div>
+        </div>
+    </section>
+    <!-- 4. Se inicia el juego -->
+    <section id="game_window" class="mainBlock block">
+        <div id="game" class="centeredContent"></div>
+    </section>
+
+    <script src="/js/entities/Slider.js"></script>
+    <script src="/js/game_script.js"></script>
+</body>
+</html>

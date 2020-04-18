@@ -1,0 +1,212 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    /* background-color:black;
+    background-image:url(../img/espacio_lavel1.png); */
+    background-color: blueviolet;
+}
+
+.row{
+    margin-left:0;
+    margin-right:0;
+}
+
+.block{
+    width: 100%;
+    height:100vh;
+    display: none;
+}
+
+.centeredContent{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.internalForm{
+    min-width: 30%;
+    max-width: 50%;
+    height: auto;
+}
+
+@media only screen and (max-width: 700px){
+    .internalForm{
+        min-width:90%;
+    }
+}
+
+.internalForm .btn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size:25px;
+}
+
+.internalForm .bigbtn{
+    padding:8% 0;
+}
+
+.visualized{
+    padding:5%;
+    /* background-color: #fff; */
+    color:#fff;
+    font-weight: bold;
+}
+
+/* #create_room{
+    background-color: blueviolet;
+    color:#fff;
+} */
+
+/* #create_room:hover{
+    background-color:rgba(138, 43, 226, 0.5);
+} */
+
+#join_room{
+    background-color: #fff;
+}
+
+#join_room:hover{
+    background-color:rgba(255, 255, 255, 0.5);
+    color:#fff;
+}
+
+.title{
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.black{
+    color:#222;
+}
+
+.control_option{
+    width:100%;
+    text-align: center;
+    color:#fff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5%;
+    cursor: pointer;
+    font-size:30px;
+}
+
+.control_option:hover{
+    background-color: #fff;
+    color:#222;
+}
+
+/* .img_option{
+    width:100px;
+    height:50px;
+} */
+
+.control_options{
+    width:80%;
+}
+
+.control_options h1{
+    text-align: center;
+    color:#fff;
+    font-size:50px;
+    font-weight: bold;
+}
+
+.instructions{
+    font-weight: bold;
+    color:#fff;
+    font-size: 40px;
+}
+
+#codigo{
+    color:greenyellow;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#estado{
+    width:100%;
+    height:5vh;
+    background-color: red;
+}
+
+#players_window{
+    background-color: indigo;
+    height:auto;
+    overflow:hidden;
+}
+
+#playersSection{
+    height:auto;
+}
+
+.player_photo{
+    width:200px;
+}
+
+.player_nickname{
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.connectionStatus{
+    background-color: rgba(255, 0, 0, 0.5);
+    width:100%;
+    height: auto;
+    padding:5%;
+}
+
+.playerBox{
+    width:70%;
+    text-align: center;
+    color:#fff;
+}
+
+.bigText{
+    font-family: sans-serif;
+    font-size: 20px;
+    color:#fff;
+}
+
+.code{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#canvas{
+    width:200px;
+    height:200px;
+}
+
+#info_section{
+    background-color:#222;
+    min-height:45vh;
+    height:auto;
+    color:#fff;
+    font-weight:bold;  
+    padding:2% 0;
+}
+
+#info_section h2{
+    font-size:50px;
+    font-weight:bold; 
+}
+
+#playersContainer{
+    padding:2% 0;
+}
+
+#playersContainer .col-lg-12 .centeredContent {
+    height:auto;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control</title>
+    <link rel="stylesheet" type="text/css" href="/frwks/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Chathura|Hind+Vadodara|Major+Mono+Display&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/css/control.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io.connect('/');
+        sessionStorage.setItem('id', socket.id);
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomID = urlParams.get('roomID'); 
+    </script>
+
+    <script src="/frwks/nipplejs/dist/nipplejs.js"></script>
+</head>
+<body>
+    <div id="ip_registration">
+        <form id="join_room_form">
+            <div id="errors"></div>
+            <div id="room_section" class="form-group">
+                <label for='roomID'>Id de la sala</label>
+                <input type='text'
+                        id='roomID'
+                        name='roomID'
+                        class="form-control"
+                        placeholder="Introduce el id que ves en la pantalla"
+                        required>
+            </div>
+            <div class="form-group">
+                <label for='nickname'>Nombre de jugador</label>
+                <input type='text'
+                        id='nickname'
+                        name='nickname'
+                        class="form-control"
+                        maxlength="10"
+                        placeholder="Introduce un nickname "
+                        autofocus
+                        required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar a la sala</button>
+        </form>
+    </div>
+    <!-- The complete control -->
+    <div id="control">
+        <div class="row" class="noselect">
+            <div class="block">
+                <div id="seeJoystick" class="movement"></div>
+                <!-- <button id="leftMovement" class="movement" data-to="left"><span class="noselect">Left</span></button> -->
+                <button id="jump" class="jump"><span class="noselect">Jump</span></button>
+            </div>
+            <div class="block">
+                <div id="moveJoystick" class="movement"></div>
+                <!-- <button id="rightMovement" class="movement" data-to="right"><span class="noselect">Right</span></button> -->
+                <button id="shot" class="fire"><span class="noselect">Shot</span></button>
+            </div>
+        </div>
+    </div>
+
+    <script src='/js/control_script.js'></script>
+</body>
+</html>
