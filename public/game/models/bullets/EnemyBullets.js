@@ -7,7 +7,7 @@ class EnemyBullets extends Phaser.Physics.Arcade.Group{
      */
     constructor(scene){
         super(scene.physics.world, scene)
-        this.fireTime = 2400;
+        this.fireTime = 2000;
         this.scene = scene;
         this.lastFired = 0;
 

@@ -36,6 +36,8 @@
             <!-- Enemies -->
             <script src='/game/models/enemies/Enemy.js'></script>
             <script src='/game/models/enemies/Enemies.js'></script>
+            <script src='/game/models/enemies/EnemyGenerator.js'></script>
+            <script src='/game/models/enemies/Spawner.js'></script>
             <!-- Players -->
             <script src='/game/models/entities/PlayerSprite.js'></script>
             <script src='/game/models/entities/PlayerContainer.js'></script>
@@ -44,6 +46,7 @@
         <script src='/game/models/MultiplayerSession.js'></script>
         
         <!-- Scenes -->
+        <script src='/game/scenes/Pause.js'></script>
         <script src='/game/scenes/Game.js'></script>
         <script src='/game/index.js'></script>
     <!-- End's Game section-->
@@ -53,7 +56,7 @@
     <section id="room_window" class="mainBlock block">
         <div class="secondBlock block">
             <div class="centeredContent">
-                <div class="internalForm">
+                <div class="internalForm visualized">
                     <h1 class="title">WALLY</h1>
                     <br><br><br>
                     <button id="create_room" class="btn btn-large btn-primary btn-block bigbtn">Crear sala</button>
@@ -91,7 +94,8 @@
                                 <option value="6">6</option>
                             </select>
                         </div>
-                        <button type="submit" id="create" class="btn btn-primary btn-large btn-block">Crear cuarto</button>
+                        <br><br>
+                        <button type="submit" id="create" class="btn btn-primary btn-large btn-block">Crear sala</button>
                     </form>
                     <button class="mt-1 btn btn-secondary btn-large btn-block return">regresar</button>
                 </div>

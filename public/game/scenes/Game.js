@@ -80,24 +80,22 @@ class Game extends Phaser.Scene{
         this.worldLayer.setScale(0.75)
         this.worldLayer.setCollisionByProperty({collision: true}, true)
 
+        this.add.text(10,10,'hola so monta tomos');
+
         //player
         this.userIteractions = this.input.keyboard.createCursorKeys();
         
         //multiplayer session
         this.session.init();
-        this.session.addCollisions(this.session.playerBullets, async (player, bullet) => {
-            bullet.destroy();
-            if(!player.life.decreaseLife(10)) await this.session.die(player.id);
-        });
+        //fuego amigo
+        // this.session.addCollisions(this.session.playerBullets, async (player, bullet) => {
+        //     bullet.destroy();
+        //     if(!player.life.decreaseLife(10)) await this.session.die(player.id);
+        // });
 
         //enemies
-        // this.gobos = new Enemies(this, 1, this.session.playerContainers, this.session.playerBullets);
-        this.gobo = new Enemy(this, new Coords(0, 100), this.session.playerContainers, this.session.playerBullets)
-
-        // this.gobo = new Enemy(this, {x: window.width/2, y: 200});
-    }
-
-    update(){
-        this.gobo.atackAndWatch(this.session.playerContainers)
+        this.spawn = new Spawner(this, new Coords(0, 565), 'right');
+        this.spawn2 = new Spawner(this, new Coords(window.innerWidth, 500), 'left');
+        // this.spawn = new Spawner(this, new Coords(window.width -100, 565), 'left');
     }
 }

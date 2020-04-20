@@ -38,7 +38,7 @@ class Player{
     }
 
     shot(){
-        this.bullets.fireBullet(this.playerObject.x + 31.5, this.playerObject.y + 47, this.direction);
+        this.bullets.fireBullet(this.playerObject.x, this.playerObject.y, this.direction);
     }
 
     jump(){

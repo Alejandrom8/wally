@@ -33,7 +33,7 @@ class Bullet extends Phaser.Physics.Arcade.Sprite{
         if(to){
             let pendiente = Math.atan((to.y - this.y) / (to.x - this.x));
             this.setRotation(pendiente)
-            this.scene.physics.moveTo(this, to.x + 31.5, to.y + 45, 700);
+            this.scene.physics.moveTo(this, to.x, to.y, 700);
         }else{
             this.setVelocityX(direction == 'right' ? 800 : - 800)
         }

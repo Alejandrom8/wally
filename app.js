@@ -50,6 +50,8 @@ io.on('connection', socket => {
     //Room events
     RoomList.onCreateRoom(socket);
     Room.onPlayerConnection(io, socket);
+    Room.onPause(io, socket);
+    Room.onResume(io, socket);
     //player events
     PlayerServer.onMove(io, socket);
     PlayerServer.onJump(io, socket);

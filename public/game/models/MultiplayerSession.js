@@ -1,5 +1,10 @@
 class MultiplayerSession{
 
+    /**
+     * 
+     * @param {Phaser.Scene} scene 
+     * @param {*} players 
+     */
     constructor(scene, players =  {}){
         this.scene = scene;
         this.players = players;
@@ -98,6 +103,21 @@ class MultiplayerSession{
         //estado que muestra a todos los jugadores e inicia el juego
         this.showPlayersInScene();
 
+        window.socket.on('pause', () => {
+            this.scene.sys.pause();
+            this.pauseText = this.scene.add.text(window.innerWidth / 2, window.innerHeight / 2, 'PAUSE', {
+                'font-family': 'Arial',
+                'color':'#ffffff',
+                'fontSize': '40px'
+            });
+        });
+
+        window.socket.on('resume', () => {
+            this.scene.sys.resume();
+            this.pauseText.destroy();
+        });
+
+        //player interactions
         window.socket.on('shot', data =>  {
             let { id } = data;
             this.players[id].shot();

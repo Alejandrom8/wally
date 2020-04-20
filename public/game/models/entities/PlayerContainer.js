@@ -14,6 +14,7 @@ class PlayerContainer extends Phaser.GameObjects.Container{
         this.coords = coords;
         this.id = id;
 
+        this.setSize(25, 50)
         //setting up this object
         this.body = new Phaser.Physics.Arcade.Body(this.scene.physics.world, this)
         this.scene.physics.world.enableBody(this, 0)
@@ -21,12 +22,15 @@ class PlayerContainer extends Phaser.GameObjects.Container{
 
         //setting up the elements that will contain this object
         /** life */
-        this.life = new LifeBar(scene, 10, -5);
+        //LifeBar(scene, 10, -5)
+        this.life = new LifeBar(scene, -20, -45);
         /** nickname */
-        this.nickname = this.scene.add.text(12.5, 0, nickname)
+        //text(12.5, 0, nickname)
+        this.nickname = this.scene.add.text(-20, -40, nickname)
 
         /** sprite */
-        this.sprite = new PlayerSprite(scene, new Coords(31.5, 45))
+        //new Coords(31.5, 45)
+        this.sprite = new PlayerSprite(scene, new Coords(-1, 0))
         this.sprite.anims.play('right', true)
         this.sprite.anims.stop()
         this.add([this.nickname,this.sprite, this.life])

@@ -6,7 +6,7 @@
 body{
     /* background-color:black;
     background-image:url(../img/espacio_lavel1.png); */
-    background-color: blueviolet;
+    background-image: linear-gradient(to bottom,indigo 0%, #000 60%);
 }
 
 .row{
@@ -30,9 +30,16 @@ body{
 }
 
 .internalForm{
-    min-width: 30%;
-    max-width: 50%;
+    min-width: 40%;
+    max-width: 60%;
+    min-height:95vh;
+    padding:2.5% 5%;
     height: auto;
+    text-shadow: 1px 1px 10px #666;
+}
+
+.internalForm input{
+    letter-spacing: 3px;
 }
 
 @media only screen and (max-width: 700px){
@@ -44,11 +51,11 @@ body{
 .internalForm .btn{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size:25px;
+    font-size:18px;
 }
 
 .internalForm .bigbtn{
-    padding:8% 0;
+    padding:6% 0;
 }
 
 .visualized{

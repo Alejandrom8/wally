@@ -63,6 +63,24 @@ class Room{
         }
     }
 
+    static onPause(io, socket){
+        socket.on('pause', roomID => {
+            if(generalList.list[roomID]){
+                let anfitrion = generalList.list[roomID].anfitrion;
+                io.to(anfitrion).emit('pause');
+            }
+        });
+    }
+
+    static onResume(io, socket){
+        socket.on('resume', roomID => {
+            if(generalList.list[roomID]){
+                let anfitrion = generalList.list[roomID].anfitrion;
+                io.to(anfitrion).emit('resume');
+            }
+        });
+    }
+
     static searchRoom(id){
         const rooms = Object.keys(generalList.list);
         let room;

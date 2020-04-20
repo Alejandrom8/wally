@@ -123,3 +123,16 @@ manager_movement.on('plain:right', (data) => {
 manager_movement.on('end', () => {
     socket.emit('stop', window.roomID);
 });
+
+const pausa = document.getElementById('pausa');
+let pausado = false;
+
+pausa.addEventListener('pointerdown', () => {
+    if(!pausado){
+        socket.emit('pause', window.roomID);
+        pausado = true;
+    }else{
+        socket.emit('resume', window.roomID);
+        pausado = false;
+    }
+});

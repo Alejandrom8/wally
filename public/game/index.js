@@ -10,11 +10,13 @@ var config = {
     },
     physics: {
         default: 'arcade',
+        debug: true,
         arcade: {
-            gravity: { y: 800 }
+            gravity: { y: 800 },
+            debug: false
         }
     },
-    scene: Game
+    scene: [Game, Pause]
 };
 
 let game;
