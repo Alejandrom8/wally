@@ -7,7 +7,7 @@ An awesome multiplayer web video game that let people join in a single computer 
 
 # Installation
 
-> just download this package and run
+> just download this package and run:
 ```sh
 npm install
 npm start
