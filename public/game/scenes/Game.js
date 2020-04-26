@@ -50,7 +50,7 @@ class Game extends Phaser.Scene{
             assetText.destroy();
         });
 
-        this.load.setBaseURL(`http://192.168.1.77:3000/game/assets`);
+        this.load.setBaseURL(`${generalURL}/game/assets`);
 
         //Sprites
         this.load.spritesheet('boxMan', 'sprites/Sprite_Dr_WallaceRv2.png', { frameWidth: 280, frameHeight: 360});

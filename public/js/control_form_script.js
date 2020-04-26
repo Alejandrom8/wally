@@ -1,6 +1,5 @@
 const registration_form = document.getElementById('registration');
 const complexID = document.getElementById('complexID');
-const globalURL = 'http://192.168.1.77:3000';
 const errorArea = document.getElementById('errors');
 const registrationSection = document.getElementById('ip_registration');
 const controlSection = document.getElementById('control');
@@ -18,7 +17,7 @@ async function performShipping(data){
             body: JSON.stringify(data)
         };
 
-        const response = await fetch(globalURL + '/control/registration', credentials);
+        const response = await fetch(generalURL + '/control/registration', credentials);
 
         if(response.ok){
             return await response.json();

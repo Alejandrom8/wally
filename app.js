@@ -43,7 +43,7 @@ app.set('view engine', 'html');
 
 //Routes - setting routes
 app.use('/control', control);
-app.use('/game', game);
+app.use('/', game);
 
 //sockets - managing sockets
 io.on('connection', socket => {
