@@ -105,7 +105,7 @@ class MultiplayerSession{
 
         window.socket.on('pause', () => {
             this.scene.sys.pause();
-            this.pauseText = this.scene.add.text(window.innerWidth / 2, window.innerHeight / 2, 'PAUSE', {
+            this.pauseText = this.scene.add.text(window.innerWidth / 2 - 100, window.innerHeight / 2, 'PAUSE', {
                 'font-family': 'Arial',
                 'color':'#ffffff',
                 'fontSize': '40px'

@@ -10,7 +10,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io.connect('/');
-        const generalURL = 'http://fidugames.wtf';
+        const generalURL = 'http://192.168.1.76:8080';
         sessionStorage.setItem('id', socket.id);
         const urlParams = new URLSearchParams(window.location.search);
         const roomID = urlParams.get('roomID'); 

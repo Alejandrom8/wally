@@ -1,6 +1,7 @@
 const PlayerServer = require('./PlayerServer');
-const UUID = require('uuid-random');
-const List = require('./List');
+      UUID = require('uuid-random');
+      List = require('./List'),
+      {player} = require('../../config')
 
 //solo es un control
 class Room{
@@ -113,7 +114,7 @@ class Room{
     createRoomID(){
         const id = UUID();
         this.id = id;
-        const simplifiedID = id.slice(0, id_size[0]);
+        const simplifiedID = id.slice(0, player.id_size[0]);
         this.simplifiedID = simplifiedID;
     }
 }

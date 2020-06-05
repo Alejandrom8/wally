@@ -16,9 +16,6 @@ const RoomList = require('./models/entities/RoomList');
 global.generalList = new RoomList;
 //io like global variabla for it's use in other methods.
 global.io = io;
-//[0] - the length of the room id;
-//[1] - the length of the player id (it's the socket id);
-global.id_size = [4, 20];
 
 //route files - the files that perform express routes
 const control = require('./routes/control');

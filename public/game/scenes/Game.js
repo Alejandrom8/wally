@@ -80,7 +80,6 @@ class Game extends Phaser.Scene{
         this.worldLayer.setScale(0.75)
         this.worldLayer.setCollisionByProperty({collision: true}, true)
 
-        this.add.text(10,10,'hola so monta tomos');
 
         //player
         this.userIteractions = this.input.keyboard.createCursorKeys();

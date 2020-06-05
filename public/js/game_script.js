@@ -86,7 +86,7 @@ window.socket.on('roomCreated', (room) => {
         finalView += `<div class="col-lg-12 row" style="height:auto;padding:2% 0;">`;
         let cells_build = rows == 0 ? cellsConstructed_firstRow : cellsConstructed_secondRow;
         for(let cell = 0; cell < cells_build; cell++){
-            finalView += `<div id="player_${playerCounter}" class="player centeredContent player-of col-md-${cellSize}"">
+            finalView += `<div id="player_${playerCounter}" class="player centeredContent player-of col-md-${cellSize}">
                 <div class="playerBox">
                     <img class="player_photo" src="/img/wally.png">
                     <h3 class="player_nickname">jugador ${playerCounter}</h3>
